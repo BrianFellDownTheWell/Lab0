@@ -7,12 +7,14 @@
 static struct proc_dir_entry *entry;
 
 static int example(struct seq_file *m, void *v){
-        seq_printf(m, "hello world\n");
+  //seq_printf(m, "hello world\n");
         struct task_struct *p;
         int sqr_sum = 0;
         for_each_process(p) {
-              seq_printf(m, "hello world\n");
+	  //seq_printf(m, "hello world\n");
+	      sqr_sum++;
         }
+	seq_printf(m, "%d\n", sqr_sum);
         return 0;
 }
 
